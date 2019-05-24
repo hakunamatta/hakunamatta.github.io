@@ -1,33 +1,83 @@
-#container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
 #canvas {
-  width: 50vw;
-  height: 50vh;
-  border: 1px solid black;
+  width: 90vw;
+  height: 90vh;
 }
 
-#buttonContainer{
-  display: flex;
-  flex-direction: column;
+:root {
+	background: #f5f6fa;
+	color: #9c9c9c;
+	font: 1rem "PT Sans", sans-serif;
 }
 
-#button {
-  /* border: none; */
-  background: #FF1493;
-  color: #ffffff !important;
-  font-weight: 100;
-  padding: 20px;
-  text-transform: uppercase;
-  border-radius: 6px;
+html,
+body,
+.container {
+	height: 100%;
 }
 
-#inputCont {
-  width: 50vw;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
+a {
+	color: inherit;
+
+	&:hover {
+		color: #7f8ff4;
+	}
+}
+
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+
+.btn {
+	display: inline-block;
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	border: 0;
+	outline: 0;
+	padding: 0;
+	transition: all 200ms ease-in;
+	cursor: pointer;
+
+	&--primary {
+		background: $button-bg-color;
+		color: $button-text-color;
+		box-shadow: 0 0 10px 2px rgba(0, 0, 0, .1);
+		border-radius: 2px;
+		padding: 12px 36px;
+
+		&:hover {
+			background: darken($button-bg-color, 4%);
+		}
+
+		&:active {
+			background: $button-bg-color;
+			box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2);
+		}
+	}
+
+	&--inside {
+		margin-left: -96px;
+	}
+}
+
+.form {
+	&__field {
+		width: 360px;
+		background: #fff;
+		color: $input-text-color;
+		font: inherit;
+		box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+		border: 0;
+		outline: 0;
+		padding: 22px 18px;
+	}
 }
