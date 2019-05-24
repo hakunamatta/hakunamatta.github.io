@@ -1,0 +1,32 @@
+#container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#canvas {
+  width: 30vw;
+  height: 30vh;
+}
+
+#buttonContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+#button {
+  /* border: none; */
+  background: #FF1493;
+  color: #ffffff !important;
+  font-weight: 100;
+  padding: 20px;
+  text-transform: uppercase;
+  border-radius: 6px;
+}
+
+#inputCont {
+  width: 50vw;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
