@@ -1,32 +1,36 @@
-function generateRandomValue(min,experimentsCount){
-  // var canvas = document.getElementById("canvas");
-  // var ctx = canvas.getContext("2d");
-  const uniqueNumber = [];
-  //       Scanv = canvas.heigth*canvas.width;
-  //
-  // var   Sresult;
-  //       n;
-  //       N;
+function generateRandomValue(experimentsCount){
 
-  for(var i=0;uniqueNumber.length < experimentsCount;i++){
-    const randomNumber = Math.floor((Math.random() * experimentsCount - min) - min);
+  const points = [];
+  const width = canvas.width;
+  const height = canvas.height;
 
-    if (uniqueNumber.indexOf(randomNumber) == -1) {
 
-        uniqueNumber.push(randomNumber);
-
+  for(var i=0; i < experimentsCount;i++){
+      const xRand = Math.floor((Math.random() * width));
+      const yRand = Math.floor((Math.random() * height));
+      points.push({x: xRand, y: yRand});
     }
-
-  }
-
-
-
-  return uniqueNumber;
+    return points;
 }
 
 function changeInputValue(){
   const input = document.getElementById('inputCont').value;
-
-  console.log(generateRandomValue(1,input));
-
+  const a = generateRandomValue(input)
+  var ctx = canvas.getContext("2d");
+  var s = canvas.height*canvas.width;
+  var arrOfPixel = []
+  var n = 0;
+  for (var i = 0; i < a.length; i++){
+      arrOfPixel.push(getPixelColor(a[i].x, a[i].y, canvas));
+      if(arrOfPixel[i] > 0){
+        n++;
+      }
+  }
+  console.log('n: ',n);
+  console.log('s: ',s);
+  console.log('S: ', 2*Math.PI*40);
+  console.log(squareEstimation(n,input,s));
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  draw();
+  drawPoints(a);
 }

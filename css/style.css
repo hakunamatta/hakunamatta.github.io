@@ -4,6 +4,10 @@
 @button-tint: fadeout(#000, 90%);
 @background: #303036;
 
+#resultInput {
+  width: 100px;
+}
+
 #container {
   display: flex;
   align-items: center;
@@ -69,20 +73,6 @@
 
 .arrow {
 	background: #FE5F55;
-	&:hover {
-		background: darken(#FE5F55, 10%);
-	}
-	&:active,
-	&:focus {
-		background: darken(#FE5F55, 30%);
-	}
-	&:after {
-		content: "\F054";
-	}
-	&:hover:after {
-		-webkit-animation: bounceright .3s alternate ease infinite;
-		animation: bounceright .3s alternate ease infinite;
-	}
 }
 
 #inputCont {

@@ -2,7 +2,7 @@
 <html lang="" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>МЕТОД МОНТЕ_КАРЛО</title>
+    <title>МЕТОД МОНТЕ-КАРЛО</title>
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -23,15 +23,22 @@
 
     <div id="buttonContainer">
       <input id="inputCont" placeholder="Number of experiments"></input>
-      <button class="button arrow" onclick="changeInputValue()">PRESS F TO PAY</button>
+      <button class="button arrow" onclick="changeInputValue()">CLICK</button>
+    </div>
+
+    <div id="result">
+      <input id="resultInput"></input>
     </div>
 
   </div>
 
 
 
-    <script type="text/javascript" src="js/drawCanvas.js"></script>
-    <script type="text/javascript" src="js/monteCarlo.js"></script>
+  <script type="text/javascript" src="js/drawCanvas.js"></script>
+  <script type="text/javascript" src="js/drawPoints.js"></script>
+  <script type="text/javascript" src="js/getColor.js"></script>
+  <script type="text/javascript" src="js/squareEstimation.js"></script>
+  <script type="text/javascript" src="js/monteCarlo.js"></script>
 
   </body>
 </html>
