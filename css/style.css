@@ -1,3 +1,9 @@
+@button-colour: #009ED8;
+@button-text: #ffffff;
+@regular-text: #333;
+@button-tint: fadeout(#000, 90%);
+@background: #303036;
+
 #container {
   display: flex;
   align-items: center;
@@ -5,27 +11,82 @@
 }
 
 #canvas {
-  width: 50vw;
-  height: 50vh;
+  width: 90vw;
+  height: 80vh;
+  border: 1px solid black;
 }
 
 #buttonContainer{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.button {
+	min-width: 15em;
 }
 
-#button {
-  /* border: none; */
-  background: #FF1493;
-  color: #ffffff !important;
-  font-weight: 100;
-  padding: 20px;
-  text-transform: uppercase;
-  border-radius: 6px;
+.button {
+  display: inline-block;
+	font-family: "Montserrat", "Trebuchet MS", Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	position: relative;
+	padding: .8em 1.4em;
+	padding-right: 4.7em;
+	background: @button-colour;
+	border: none;
+	color: white;
+	transition: .2s;
+	&:before,
+	&:after {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		padding-top: inherit;
+		padding-bottom: inherit;
+		width: 2.8em;
+		content: "\00a0";
+		font-family: 'FontAwesome', sans-serif;
+		font-size: 1.2em;
+		text-align: center;
+
+		transition: .2s;
+		transform-origin: 50% 60%;
+	}
+	&:before {
+		background: @button-tint;
+	}
+	&:hover {
+		background: darken(@button-colour, 10%);
+	}
+	&:active,
+	&:focus {
+		background: darken(@button-colour, 30%);
+		outline: none;
+	}
+}
+
+.arrow {
+	background: #FE5F55;
+	&:hover {
+		background: darken(#FE5F55, 10%);
+	}
+	&:active,
+	&:focus {
+		background: darken(#FE5F55, 30%);
+	}
+	&:after {
+		content: "\F054";
+	}
+	&:hover:after {
+		-webkit-animation: bounceright .3s alternate ease infinite;
+		animation: bounceright .3s alternate ease infinite;
+	}
 }
 
 #inputCont {
-  width: 50vw;
+  width: 20vw;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
