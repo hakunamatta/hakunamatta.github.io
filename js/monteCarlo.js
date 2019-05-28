@@ -15,7 +15,7 @@ function generateRandomValue(experimentsCount){
 
 function changeInputValue(){
   const input = document.getElementById('inputCont').value;
-  const a = generateRandomValue(input)
+  const a = generateRandomValue(input);
   var ctx = canvas.getContext("2d");
   var s = canvas.height*canvas.width;
   var arrOfPixel = []
@@ -26,10 +26,7 @@ function changeInputValue(){
         n++;
       }
   }
-  console.log('n: ',n);
-  console.log('s: ',s);
-  console.log('S: ', 2*Math.PI*40);
-  console.log(squareEstimation(n,input,s));
+  console.log('Приблизительное значени площади искомой фигуры: ',squareEstimation(n,input,s));
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   draw();
   drawPoints(a);

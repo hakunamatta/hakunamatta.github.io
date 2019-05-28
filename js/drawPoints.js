@@ -7,8 +7,6 @@ function dot(x,y,canvas){
   ctx.fill();
 }
 
-
-
 function drawPoints(points){
 
   for(var i = 0; i < points.length; i++){

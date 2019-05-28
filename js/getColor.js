@@ -4,8 +4,5 @@ function getPixelColor(x,y,canvas){
     var n = 0;
 
     return pixelData[3];
-    // if(pixelData[3] > 0){
-    //   n = n + 1;
-    // }
-    // console.log(n);
+
 }
