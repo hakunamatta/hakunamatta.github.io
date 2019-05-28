@@ -12,5 +12,4 @@ function drawPoints(points){
   for(var i = 0; i < points.length; i++){
     dot(points[i].x, points[i].y, canvas)
   }
-
 }
